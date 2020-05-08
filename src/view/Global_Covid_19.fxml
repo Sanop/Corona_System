@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="412.0" prefWidth="682.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GlobalCovid19Controller">
+   <children>
+      <ImageView fitHeight="388.0" fitWidth="704.0" layoutY="24.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ezgif.com-webp-to-png.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="203.0" layoutY="24.0" prefHeight="44.0" prefWidth="289.0" text="G l o b a l   C o v i d - 1 9">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="86.0" prefHeight="26.0" prefWidth="108.0" text="Last Updated ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="86.0" prefHeight="26.0" prefWidth="129.0" text="Confirmed Cases">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="86.0" prefHeight="26.0" prefWidth="74.0" text="Recoverd">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="554.0" layoutY="86.0" prefHeight="26.0" prefWidth="57.0" text="Deaths">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="43.0" layoutY="121.0" prefHeight="36.0" prefWidth="129.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblConfirmedCases" layoutX="234.0" layoutY="121.0" prefHeight="36.0" prefWidth="108.0" textFill="#2b00ff">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRecoverdCases" layoutX="393.0" layoutY="121.0" prefHeight="36.0" prefWidth="108.0" textFill="#00b512">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDeathes" layoutX="540.0" layoutY="120.0" prefHeight="36.0" prefWidth="88.0" textFill="RED">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="dtpTody" layoutX="43.0" layoutY="178.0" onAction="#dtpTodyOnAction" prefHeight="28.0" prefWidth="207.0" promptText="Date" />
+      <TextField fx:id="txtconfirmedCases" layoutX="43.0" layoutY="234.0" onAction="#txtconfirmedCasesOnAction" prefHeight="25.0" prefWidth="226.0" />
+      <TextField fx:id="txtRecoverdCases" layoutX="43.0" layoutY="273.0" onAction="#txtRecoverdCasesOnAction" prefHeight="25.0" prefWidth="226.0" />
+      <TextField fx:id="txtDeathes" layoutX="43.0" layoutY="312.0" onAction="#txtDeathesOnAction" prefHeight="25.0" prefWidth="226.0" />
+      <Label layoutX="279.0" layoutY="238.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of confirmed cases">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="275.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of recoverd cases">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="278.0" layoutY="314.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of deathes">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnUpdate" layoutX="43.0" layoutY="360.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #339966;" text="Update" textFill="WHITE" />
+      <JFXButton fx:id="btnHome" layoutX="17.0" layoutY="14.0" onAction="#btnHomeOnAction" prefHeight="44.0" prefWidth="108.0" text="Home">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-back-arrow-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="lblBanner" layoutX="172.0" layoutY="352.0" prefHeight="44.0" prefWidth="257.0" text="You can update this information, but be careful" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>
