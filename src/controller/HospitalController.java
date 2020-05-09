@@ -185,6 +185,7 @@ public class HospitalController {
                                     btnDelete.setDisable(true);
                                     txtSearch.clear();
                                     txtSearch.setPromptText("Search Hospital");
+                                    lblHidden.setText("0");
                                 }catch (NullPointerException e){
 
                                 }
@@ -438,7 +439,6 @@ public class HospitalController {
 
     public void txtSearchOnKeyReleased(KeyEvent keyEvent) {
         String text = txtSearch.getText();
-        // select hospital_Name from hospitals where hospital_Name like '%h%';
         Connection connection = DBConnection.getInstance().getConnection();
         ObservableList items = lstHospital.getItems();
         items.clear();
@@ -457,6 +457,12 @@ public class HospitalController {
     public void txtSearchOnMouseClicked(MouseEvent mouseEvent) {
         common();
         txtSearch.requestFocus();
+        lblCapacity.setVisible(false);
+        lblvalidationDirectorPhoneNumber.setVisible(false);
+        lblvalidationHospitalPhoneNubmer1.setVisible(false);
+        lblvalidationHospitalPhoneNubmer2.setVisible(false);
+        lblvalidationHospitalFaxNumber.setVisible(false);
+        lblvalidationHospitalEmail.setVisible(false);
     }
 
     public void txtHospitalNameOnActon(ActionEvent actionEvent) {

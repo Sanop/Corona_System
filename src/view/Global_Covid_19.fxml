@@ -16,9 +16,9 @@
             <Image url="@../images/ezgif.com-webp-to-png.png" />
          </image>
       </ImageView>
-      <Label layoutX="203.0" layoutY="24.0" prefHeight="44.0" prefWidth="289.0" text="G l o b a l   C o v i d - 1 9">
+      <Label layoutX="214.0" layoutY="24.0" prefHeight="44.0" prefWidth="257.0" text="G l o b a l   C o v i d - 1 9" underline="true">
          <font>
-            <Font size="25.0" />
+            <Font name="Arial Bold" size="22.0" />
          </font>
       </Label>
       <Label layoutX="57.0" layoutY="86.0" prefHeight="26.0" prefWidth="108.0" text="Last Updated ">

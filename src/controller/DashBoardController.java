@@ -28,7 +28,7 @@ public class DashBoardController {
             Scene manageHospitalScene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/Hospital.fxml")));
             Stage primaryStage = (Stage) root.getScene().getWindow();
             primaryStage.setScene(manageHospitalScene);
-            primaryStage.setTitle("Global Covid-19");
+            primaryStage.setTitle("Hospital Management");
             primaryStage.centerOnScreen();
             Image img = new Image("/images/virus.png");
             primaryStage.getIcons().add(img);
@@ -39,6 +39,18 @@ public class DashBoardController {
     }
 
     public void btnManageQuarantineCentersOnAction(ActionEvent actionEvent) {
+        try {
+            Scene manageHospitalScene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/QuarantineCenters.fxml")));
+            Stage primaryStage = (Stage) root.getScene().getWindow();
+            primaryStage.setScene(manageHospitalScene);
+            primaryStage.setTitle("Quarantine Center Management");
+            primaryStage.centerOnScreen();
+            Image img = new Image("/images/virus.png");
+            primaryStage.getIcons().add(img);
+            primaryStage.sizeToScene();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnGlobalCovid19OnAction(ActionEvent actionEvent) {
