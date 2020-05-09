@@ -25,3 +25,47 @@ create table global_Covid_19(
 );
 
 insert into global_Covid_19 (date,confirmed_Cases,recoverd,deaths,total_Confirmed_Cases,total_Recoverd,total_Deaths,admin_ID,status)values('2020-05-07','3795591','1279400','262741','3795591','1279400','262741','U001','Not Update');
+
+use coronasystem;
+
+create table users(
+    id varchar(100)primary key,
+    name varchar(100) not null,
+    e_mail varchar(100)not null,
+    status varchar(100)not null,
+    password varchar(100)not null
+);
+
+insert into users values('U001','Sanoj','sanodeemantha@gmail.com','Admin','12345');
+
+create table global_Covid_19(
+    date varchar(100)primary key,
+    confirmed_Cases varchar(100),
+    recoverd varchar(100),
+    deaths varchar(100),
+    total_Confirmed_Cases varchar(100) not null,
+    total_Recoverd varchar(100)not null,
+    total_Deaths varchar(100)not null,
+    admin_ID varchar(100)not null,
+    status varchar(100),
+    constraint foreign key(admin_ID)references users(id)
+);
+
+insert into global_Covid_19 (date,confirmed_Cases,recoverd,deaths,total_Confirmed_Cases,total_Recoverd,total_Deaths,admin_ID,status)values('2020-05-07','3795591','1279400','262741','3795591','1279400','262741','U001','Not Update');
+
+
+create table hospitals(
+    id varchar(100)primary key,
+    hospital_Name varchar(100)not null,
+    city varchar(100)not null,
+    district varchar(100)not null,
+    capacity varchar(100)not null,
+    director varchar(100)not null,
+    director_Phone_No varchar(100)not null,
+    hospital_Phone_No_1 varchar(100)not null,
+    hospital_Phone_No_2 varchar(100)not null,
+    hospital_Fax_No varchar(100)not null,
+    hospital_Email varchar(100)not null,
+    admin_ID varchar(100)not null,
+    constraint foreign key(admin_ID) references users(id)
+);

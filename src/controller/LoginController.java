@@ -58,12 +58,33 @@ public class LoginController {
     }
 
     public void txtUserNameOnAction(ActionEvent actionEvent) {
+        txtPassword.requestFocus();
     }
 
     public void txtPasswordOnAction(ActionEvent actionEvent) {
+        loginCode();
     }
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
+        loginCode();
+    }
+
+    private void login() {
+        try {
+            Scene dashBoardScene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/DashBoard.fxml")));
+            Stage primaryStage = (Stage) root.getScene().getWindow();
+            primaryStage.setScene(dashBoardScene);
+            primaryStage.centerOnScreen();
+            Image img = new Image("/images/virus.png");
+            primaryStage.getIcons().add(img);
+            primaryStage.sizeToScene();
+            primaryStage.setTitle("Dash Bord");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loginCode(){
         String userType = cmbUserType.getSelectionModel().getSelectedItem().toString();
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
@@ -106,21 +127,6 @@ public class LoginController {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
-    }
-
-    private void login() {
-        try {
-            Scene dashBoardScene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/DashBoard.fxml")));
-            Stage primaryStage = (Stage) root.getScene().getWindow();
-            primaryStage.setScene(dashBoardScene);
-            primaryStage.centerOnScreen();
-            Image img = new Image("/images/virus.png");
-            primaryStage.getIcons().add(img);
-            primaryStage.sizeToScene();
-            primaryStage.setTitle("Dash Bord");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
