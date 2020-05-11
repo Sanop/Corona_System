@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -32,10 +33,19 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <TextField fx:id="txtSearch" layoutX="4.0" layoutY="74.0" onKeyReleased="#txtSearchOnKeyReleased" onMouseClicked="#txtSearchOnMouseClicked" prefHeight="31.0" prefWidth="266.0" promptText="Hospital Search" />
-      <ListView fx:id="lstHospital" layoutX="4.0" layoutY="104.0" prefHeight="473.0" prefWidth="266.0" />
-      <JFXButton fx:id="btnNewHospital" layoutX="4.0" layoutY="576.0" onAction="#btnNewHospitalOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-color: #339966;" text="+ New Hospital" textFill="WHITE" />
+      <ListView fx:id="lstHospital" layoutX="4.0" layoutY="104.0" prefHeight="473.0" prefWidth="266.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ListView>
+      <JFXButton fx:id="btnNewHospital" layoutX="4.0" layoutY="576.0" onAction="#btnNewHospitalOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-color: #339966;" text="+ New Hospital" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <TitledPane animated="false" collapsible="false" layoutX="275.0" layoutY="72.0" prefHeight="541.0" prefWidth="453.0" text="Hospital Informantion">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="451.0" style="-fx-background-color: #ffffff;">
@@ -51,8 +61,14 @@
                   <JFXTextField fx:id="txtHospitalPhoneNo2" labelFloat="true" layoutX="16.0" layoutY="375.0" onAction="#txtHospitalPhoneNo2OnAction" prefHeight="25.0" prefWidth="414.0" promptText="Hospital Phone Number 2" />
                   <JFXTextField fx:id="txtHospitalFaxNumber" labelFloat="true" layoutX="16.0" layoutY="423.0" onAction="#txtHospitalFaxNumberOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Hospital Fax Number" />
                   <JFXTextField fx:id="txtHospitalEMail" labelFloat="true" layoutX="17.0" layoutY="470.0" onAction="#txtHospitalEMailOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Hospital E-Mail" />
-                  <JFXButton fx:id="btnSave" layoutX="155.0" layoutY="8.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #339966;" text="Save" textFill="WHITE" />
-                  <JFXButton fx:id="btnDelete" layoutX="274.0" layoutY="8.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #ff5050;" text="Delete" textFill="WHITE" />
+                  <JFXButton fx:id="btnSave" layoutX="155.0" layoutY="8.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #339966;" text="Save" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton fx:id="btnDelete" layoutX="274.0" layoutY="8.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #ff5050;" text="Delete" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
                   <Label fx:id="lblvalidationDirectorPhoneNumber" layoutX="225.0" layoutY="291.0" prefHeight="17.0" prefWidth="202.0" text="Please Enter corrrect format (xxx-xxxxxxx)" textFill="RED" visible="false">
                      <font>
                         <Font size="11.0" />

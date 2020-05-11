@@ -27,7 +27,6 @@ public class LoginController {
     public JFXTextField txtUserName;
     public JFXPasswordField txtPassword;
     public JFXButton btnLogin;
-    public JFXButton btnRegister;
     public static String userID;
     public AnchorPane root;
 
@@ -53,8 +52,8 @@ public class LoginController {
         ObservableList items = cmbUserType.getItems();
         items.add("Admin");
         items.add("P.S.T.F Member");
-        items.add("Quarantine Center Manager");
-        items.add("Hospital Manager");
+        items.add("Hospital IT");
+        items.add("Quarantine Center IT");
     }
 
     public void txtUserNameOnAction(ActionEvent actionEvent) {
@@ -93,7 +92,7 @@ public class LoginController {
 
         try {
 
-            PreparedStatement preparedStatement = connection.prepareStatement("select id from users where name = ? and password = ? and status = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select id from users where user_Name = ? and password = ? and user_Role = ?");
             preparedStatement.setObject(1,userName);
             preparedStatement.setObject(2,password);
             preparedStatement.setObject(3,userType);
@@ -128,9 +127,6 @@ public class LoginController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public void btnRegisterOnAction(ActionEvent actionEvent) {
     }
 
     public static void setUserID(String id){

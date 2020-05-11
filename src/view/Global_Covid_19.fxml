@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -61,26 +62,32 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <JFXDatePicker fx:id="dtpTody" layoutX="43.0" layoutY="178.0" onAction="#dtpTodyOnAction" prefHeight="28.0" prefWidth="207.0" promptText="Date" />
+      <JFXDatePicker fx:id="dtpTody" layoutX="43.0" layoutY="178.0" onAction="#dtpTodyOnAction" prefHeight="28.0" prefWidth="207.0" promptText="Date">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXDatePicker>
       <TextField fx:id="txtconfirmedCases" layoutX="43.0" layoutY="234.0" onAction="#txtconfirmedCasesOnAction" prefHeight="25.0" prefWidth="226.0" />
-      <TextField fx:id="txtRecoverdCases" layoutX="43.0" layoutY="273.0" onAction="#txtRecoverdCasesOnAction" prefHeight="25.0" prefWidth="226.0" />
-      <TextField fx:id="txtDeathes" layoutX="43.0" layoutY="312.0" onAction="#txtDeathesOnAction" prefHeight="25.0" prefWidth="226.0" />
+      <TextField fx:id="txtRecoverdCases" layoutX="43.0" layoutY="276.0" onAction="#txtRecoverdCasesOnAction" prefHeight="25.0" prefWidth="226.0" />
+      <TextField fx:id="txtDeathes" layoutX="43.0" layoutY="317.0" onAction="#txtDeathesOnAction" prefHeight="25.0" prefWidth="226.0" />
       <Label layoutX="279.0" layoutY="238.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of confirmed cases">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="275.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of recoverd cases">
+      <Label layoutX="279.0" layoutY="278.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of recoverd cases">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="278.0" layoutY="314.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of deathes">
+      <Label layoutX="278.0" layoutY="319.0" prefHeight="19.0" prefWidth="217.0" text="Enter the number of deathes">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnUpdate" layoutX="43.0" layoutY="360.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #339966;" text="Update" textFill="WHITE" />
+      <JFXButton fx:id="btnUpdate" layoutX="43.0" layoutY="362.0" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #339966;" text="Update" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <JFXButton fx:id="btnHome" layoutX="17.0" layoutY="14.0" onAction="#btnHomeOnAction" prefHeight="44.0" prefWidth="108.0" text="Home">
          <graphic>
             <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
@@ -89,7 +96,13 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <Label fx:id="lblBanner" layoutX="172.0" layoutY="352.0" prefHeight="44.0" prefWidth="257.0" text="You can update this information, but be careful" textFill="RED" visible="false" />
+      <Label fx:id="lblConfirmedValidate" layoutX="43.0" layoutY="256.0" prefHeight="17.0" prefWidth="129.0" text="Please enter only digits" textFill="RED" />
+      <Label fx:id="lblRevocerdValidate" layoutX="44.0" layoutY="298.0" prefHeight="17.0" prefWidth="129.0" text="Please enter only digits" textFill="RED" />
+      <Label fx:id="lblDeathesValidate" layoutX="44.0" layoutY="339.0" prefHeight="17.0" prefWidth="129.0" text="Please enter only digits" textFill="RED" />
    </children>
 </AnchorPane>

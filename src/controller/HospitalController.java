@@ -344,7 +344,7 @@ public class HospitalController {
         Connection connection = DBConnection.getInstance().getConnection();
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into hospitals values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into hospitals values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
             preparedStatement.setObject(1,id);
             preparedStatement.setObject(2,hospital_Name);
             preparedStatement.setObject(3,city);
@@ -357,6 +357,7 @@ public class HospitalController {
             preparedStatement.setObject(10,hospital_Fax_No);
             preparedStatement.setObject(11,email);
             preparedStatement.setObject(12,userID);
+            preparedStatement.setObject(13,"Not Reserved");
 
             int i = preparedStatement.executeUpdate();
 

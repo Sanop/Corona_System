@@ -38,9 +38,15 @@ public class GlobalCovid19Controller {
     public AnchorPane root;
     public Label lblBanner;
     public static int newTotal_Confirmed_Cases;
+    public Label lblConfirmedValidate;
+    public Label lblRevocerdValidate;
+    public Label lblDeathesValidate;
 
     public void initialize() {
         loadLabels();
+        lblDeathesValidate.setVisible(false);
+        lblRevocerdValidate.setVisible(false);
+        lblConfirmedValidate.setVisible(false);
         txtconfirmedCases.setDisable(true);
         txtRecoverdCases.setDisable(true);
         txtDeathes.setDisable(true);
@@ -301,17 +307,17 @@ public class GlobalCovid19Controller {
 
     public void updateOnAction(){
         if (txtconfirmedCases.getText().trim().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Fields Can not be empty").showAndWait();
             txtconfirmedCases.requestFocus();
         } else if (txtRecoverdCases.getText().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Fields can not be empty").showAndWait();
             txtRecoverdCases.requestFocus();
         } else if (txtDeathes.getText().trim().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Fields can not be empty").showAndWait();
             txtDeathes.requestFocus();
         } else if (txtconfirmedCases.getText().trim().matches("\\d+")) {
+            lblConfirmedValidate.setVisible(false);
             if (txtRecoverdCases.getText().trim().matches("\\d+")) {
+                lblRevocerdValidate.setVisible(false);
                 if (txtDeathes.getText().trim().matches("\\d+")) {
+                    lblDeathesValidate.setVisible(false);
                     update();
                     loadLabels();
                     txtconfirmedCases.clear();
@@ -326,15 +332,15 @@ public class GlobalCovid19Controller {
                     dtpTody.setValue(null);
                     dtpTody.requestFocus();
                 } else {
-                    new Alert(Alert.AlertType.ERROR, "Please enter only digits").showAndWait();
+                    lblDeathesValidate.setVisible(true);
                     txtDeathes.requestFocus();
                 }
             } else {
-                new Alert(Alert.AlertType.ERROR, "Please enter only digits").showAndWait();
+                lblRevocerdValidate.setVisible(true);
                 txtRecoverdCases.requestFocus();
             }
         } else {
-            new Alert(Alert.AlertType.ERROR, "Please enter only digits").showAndWait();
+            lblConfirmedValidate.setVisible(true);
             txtconfirmedCases.requestFocus();
         }
     }

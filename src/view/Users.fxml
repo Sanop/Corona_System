@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="665.0" prefWidth="652.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsersController">
+   <children>
+      <JFXButton fx:id="btnHome" layoutX="14.0" layoutY="14.0" onAction="#btnHomeOnAction" prefHeight="44.0" prefWidth="108.0" text="Home">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-back-arrow-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="217.0" layoutY="14.0" prefHeight="35.0" prefWidth="219.0" text="M a n a g e   U s e r s" underline="true">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAddNewUser" layoutX="464.0" layoutY="54.0" onAction="#btnAddNewUserOnAction" prefHeight="35.0" prefWidth="157.0" style="-fx-background-color: #0066ff;" text="+ Add New" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fitHeight="435.0" fitWidth="652.0" layoutY="263.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ezgif.com-webp-to-png.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="31.0" layoutY="118.0" onAction="#txtNameOnAction" prefHeight="28.0" prefWidth="590.0" promptText="Enter The Name" />
+      <JFXTextField fx:id="txtContactNumber" labelFloat="true" layoutX="31.0" layoutY="164.0" onAction="#txtContactNumberOnAction" prefHeight="28.0" prefWidth="590.0" promptText="Enter The Contact Number" />
+      <JFXTextField fx:id="txtMail" labelFloat="true" layoutX="32.0" layoutY="208.0" onAction="#txtMailOnAction" prefHeight="28.0" prefWidth="590.0" promptText="Enter The E-mail" />
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="32.0" layoutY="254.0" onAction="#txtUserNameOnAction" onKeyReleased="#txtUserNameOnKeyReleased" onMouseClicked="#txtUserNameOnMouseClicked" prefHeight="28.0" prefWidth="590.0" promptText="Enter The User Name" />
+      <JFXComboBox fx:id="cmbUserRole" labelFloat="true" layoutX="31.0" layoutY="344.0" prefHeight="28.0" prefWidth="590.0" promptText="Select User Role">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXComboBox fx:id="cmbHospitalsAndCenters" labelFloat="true" layoutX="31.0" layoutY="390.0" prefHeight="28.0" prefWidth="590.0" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXButton fx:id="btnSave" layoutX="504.0" layoutY="425.0" onAction="#btnSaveOnAction" prefHeight="28.0" prefWidth="117.0" style="-fx-background-color: #339966;" text="Save" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <TextField fx:id="txtSearch" layoutX="31.0" layoutY="458.0" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="28.0" prefWidth="590.0" promptText="Filter By User Name Or Name" />
+      <TableView fx:id="tblUsers" layoutX="31.0" layoutY="495.0" prefHeight="196.0" prefWidth="590.0">
+        <columns>
+          <TableColumn prefWidth="138.0" text="User Name" />
+          <TableColumn prefWidth="132.0" text="Name" />
+            <TableColumn prefWidth="154.0" text="Role" />
+            <TableColumn prefWidth="165.0" text="Delete" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Label fx:id="lblUserID" layoutX="464.0" layoutY="98.0" prefHeight="28.0" prefWidth="157.0" text="User ID" />
+      <JFXTextField fx:id="txtPasswordShow" labelFloat="true" layoutX="32.0" layoutY="299.0" onKeyReleased="#txtPasswordShowOnKeyReleased" prefHeight="28.0" prefWidth="590.0" promptText="Enter The Password" />
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="32.0" layoutY="299.0" onAction="#txtPasswordOnAction" onKeyReleased="#txtPasswordOnKeyReleased" onMouseClicked="#txtPasswordOnMouseClicked" prefHeight="28.0" prefWidth="590.0" promptText="Enter The Password" />
+      <ImageView fx:id="imgPassword" fitHeight="25.0" fitWidth="20.0" layoutX="601.0" layoutY="308.0" onMouseClicked="#imgPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/eye.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="lblUserName" layoutX="369.0" layoutY="266.0" prefHeight="17.0" prefWidth="252.0" text="This is Default User Name you Can Change this" textFill="#bfa8a8" visible="false" />
+      <Label fx:id="lblPassword" layoutX="357.0" layoutY="311.0" prefHeight="17.0" prefWidth="242.0" text="This is Default Password you Can Change this" textFill="#bfa8a8" visible="false" />
+      <Label fx:id="lblLocation" layoutX="47.0" layoutY="81.0" prefHeight="28.0" prefWidth="32.0" text="0" visible="false" />
+      <Label fx:id="lblValidateContactNumber" layoutX="401.0" layoutY="176.0" prefHeight="17.0" prefWidth="219.0" text="Please Enter Correct Format (xxx-xxxxxxx)" textFill="RED" visible="false" />
+      <Label fx:id="lblUserRole" layoutX="90.0" layoutY="84.0" prefHeight="28.0" prefWidth="32.0" text="0" visible="false" />
+      <Label fx:id="lblValidateEmail" layoutX="379.0" layoutY="220.0" prefHeight="17.0" prefWidth="242.0" text="Please Enter Correct Format (xxxxx@xxx.com)" textFill="RED" visible="false" />
+      <JFXButton fx:id="btnOK" disable="true" layoutX="379.0" layoutY="425.0" onAction="#btnOKOnAction" prefHeight="28.0" prefWidth="117.0" style="-fx-background-color: #ffcc66;" text="OK">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label fx:id="lblHidden" layoutX="65.0" layoutY="404.0" prefHeight="17.0" prefWidth="185.0" />
+   </children>
+</AnchorPane>

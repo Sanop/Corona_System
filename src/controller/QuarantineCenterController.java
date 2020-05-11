@@ -112,6 +112,13 @@ public class QuarantineCenterController {
             }
         });
 
+        cmbDistrict.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                txtHead.requestFocus();
+                lblHidden.setText("1");
+            }
+        });
 
     }
 
@@ -180,11 +187,6 @@ public class QuarantineCenterController {
         items.add("Hambantota");
         items.add("Matara");
         items.add("Galle");
-    }
-
-    public void cmbDistrict(ActionEvent actionEvent) {
-        lblHidden.setText("1");
-        txtHead.requestFocus();
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
@@ -366,7 +368,7 @@ public class QuarantineCenterController {
 
         Connection connection = DBConnection.getInstance().getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into quarantineCenters values(?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into quarantineCenters values(?,?,?,?,?,?,?,?,?,?,?)");
             preparedStatement.setObject(1,id);
             preparedStatement.setObject(2,name);
             preparedStatement.setObject(3,city);
@@ -377,6 +379,7 @@ public class QuarantineCenterController {
             preparedStatement.setObject(8,contact_2);
             preparedStatement.setObject(9,capacity);
             preparedStatement.setObject(10,userID);
+            preparedStatement.setObject(11,"Not Reserved");
 
             int i = preparedStatement.executeUpdate();
 

@@ -4,12 +4,15 @@ use coronasystem;
 create table users(
     id varchar(100)primary key,
     name varchar(100) not null,
+    contact varchar(100)not null,
     e_mail varchar(100)not null,
-    status varchar(100)not null,
-    password varchar(100)not null
+    user_Name varchar(100)not null,
+    password varchar(100)not null,
+    user_Role varchar(100)not null,
+    location varchar(100)
 );
 
-insert into users values('U001','Sanoj','sanodeemantha@gmail.com','Admin','12345');
+insert into users values('U001','Sanoj Deemantha','076-6689983','sanodeemantha@gamil.com','Sanoj','12345','Admin','All');
 
 create table global_Covid_19(
     date varchar(100)primary key,
@@ -43,6 +46,8 @@ create table hospitals(
     constraint foreign key(admin_ID) references users(id)
 );
 
+alter table hospitals add column status varchar(100) not null;
+
 create table quarantineCenters(
     id varchar(100)primary key,
     center_Name varchar(100)not null,
@@ -56,3 +61,5 @@ create table quarantineCenters(
     admin_ID varchar(100)not null,
     constraint foreign key(admin_ID) references users(id)
 );
+
+alter table quarantineCenters add column status varchar(100) not null;

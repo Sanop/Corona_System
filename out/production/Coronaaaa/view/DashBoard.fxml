@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,12 +10,12 @@
 
 <AnchorPane fx:id="root" prefHeight="455.0" prefWidth="690.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <children>
-      <Label layoutX="254.0" layoutY="26.0" prefHeight="44.0" prefWidth="183.0" text="D a s h b o r d">
+      <Label layoutX="254.0" layoutY="26.0" prefHeight="44.0" prefWidth="183.0" text="D a s h b o r d" underline="true">
          <font>
-            <Font size="29.0" />
+            <Font name="Arial" size="29.0" />
          </font>
       </Label>
-      <ImageView fx:id="btnManageUsers" fitHeight="404.0" fitWidth="652.0" layoutY="46.0" onDragDetected="#btnManageUsersOnAction" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="404.0" fitWidth="652.0" layoutY="46.0" opacity="0.1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ezgif.com-webp-to-png.png" />
          </image>
@@ -23,21 +24,49 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnManageHospitals" layoutX="215.0" layoutY="182.0" onAction="#btnManageHospitalsOnAction" prefHeight="36.0" prefWidth="261.0" style="-fx-background-color: #339966;" text="Manage Hospitals" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton fx:id="btnManageQuarantineCenters" layoutX="215.0" layoutY="230.0" onAction="#btnManageQuarantineCentersOnAction" prefHeight="36.0" prefWidth="261.0" style="-fx-background-color: #339966;" text="Manage Quarantine Centers" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton layoutX="215.0" layoutY="276.0" prefHeight="36.0" prefWidth="261.0" style="-fx-background-color: #339966;" text="Manage Users" textFill="WHITE">
+      <JFXButton fx:id="btnManageUsers" layoutX="215.0" layoutY="276.0" onAction="#btnManageUsersOnAction" prefHeight="36.0" prefWidth="261.0" style="-fx-background-color: #339966;" text="Manage Users" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
+      <JFXButton fx:id="btnLogOut" layoutX="259.0" layoutY="352.0" onAction="#btnLogOutOnAction" prefHeight="44.0" prefWidth="174.0" style="-fx-background-color: #26734d;" text="Log out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="imgLogout" fitHeight="29.0" fitWidth="26.0" layoutX="277.0" layoutY="361.0" onMouseClicked="#imgLogoutOnMouseCLicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logout.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

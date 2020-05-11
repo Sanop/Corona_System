@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,21 +13,30 @@
 
 <AnchorPane fx:id="root" prefHeight="299.0" prefWidth="629.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <Label layoutX="94.0" layoutY="14.0" prefHeight="36.0" prefWidth="442.0" text="L o g i n   t o   C o v i d - 1 9   s y s t e m">
+      <Label layoutX="83.0" layoutY="14.0" prefHeight="36.0" prefWidth="464.0" text="L o g i n   t o   C o v i d - 1 9   s y s t e m" underline="true">
          <font>
-            <Font size="25.0" />
+            <Font name="Arial Bold" size="25.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbUserType" layoutX="345.0" layoutY="63.0" prefHeight="28.0" prefWidth="195.0" />
+      <JFXComboBox fx:id="cmbUserType" layoutX="345.0" layoutY="63.0" prefHeight="28.0" prefWidth="195.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
       <Label layoutX="387.0" layoutY="94.0" prefHeight="17.0" prefWidth="112.0" text="Choose who are you" />
       <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="308.0" layoutY="132.0" onAction="#txtUserNameOnAction" prefHeight="28.0" prefWidth="295.0" promptText="User Name" />
       <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="308.0" layoutY="187.0" onAction="#txtPasswordOnAction" prefHeight="28.0" prefWidth="295.0" promptText="Password" />
-      <JFXButton fx:id="btnLogin" layoutX="361.0" layoutY="233.0" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #009933;" text="Login" textFill="WHITE" />
-      <JFXButton fx:id="btnRegister" layoutX="361.0" layoutY="260.0" onAction="#btnRegisterOnAction" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #0066cc;" text="Register" textFill="WHITE" />
+      <JFXButton fx:id="btnLogin" layoutX="346.0" layoutY="230.0" onAction="#btnLoginOnAction" prefHeight="28.0" prefWidth="220.0" style="-fx-background-color: #009933;" text="Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <ImageView fitHeight="203.0" fitWidth="316.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ezgif.com-webp-to-png.png" />
          </image>
       </ImageView>
+      <Label layoutX="406.0" layoutY="262.0" prefHeight="17.0" prefWidth="100.0" text="Forgot Password ?" textFill="#3000ff" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
    </children>
 </AnchorPane>

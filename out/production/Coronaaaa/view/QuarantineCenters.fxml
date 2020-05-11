@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +12,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane fx:id="root" prefHeight="561.0" prefWidth="734.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QuarantineCenterController">
    <children>
@@ -33,9 +33,18 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <ListView fx:id="lstCenters" layoutX="6.0" layoutY="114.0" prefHeight="384.0" prefWidth="266.0" />
-      <JFXButton fx:id="btnNewCenter" layoutX="6.0" layoutY="497.0" onAction="#btnNewCenterOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-color: #339966;" text="+ New Centre" textFill="WHITE" />
+      <ListView fx:id="lstCenters" layoutX="6.0" layoutY="114.0" prefHeight="384.0" prefWidth="266.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ListView>
+      <JFXButton fx:id="btnNewCenter" layoutX="6.0" layoutY="497.0" onAction="#btnNewCenterOnAction" prefHeight="31.0" prefWidth="266.0" style="-fx-background-color: #339966;" text="+ New Centre" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <TitledPane animated="false" collapsible="false" layoutX="278.0" layoutY="82.0" prefHeight="447.0" prefWidth="453.0" text="Qurantine Center Information">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="451.0" style="-fx-background-color: #ffffff;">
@@ -43,14 +52,20 @@
                   <JFXTextField fx:id="txtId" labelFloat="true" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="108.0" promptText="ID" />
                   <JFXTextField fx:id="txtCenterName" labelFloat="true" layoutX="14.0" layoutY="60.0" onAction="#txtCenterNameOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Quarantine Center Name" />
                   <JFXTextField fx:id="txtCity" labelFloat="true" layoutX="14.0" layoutY="103.0" onAction="#txtCityOnAction" prefHeight="25.0" prefWidth="414.0" promptText="City" />
-                  <JFXComboBox fx:id="cmbDistrict" labelFloat="true" layoutX="14.0" layoutY="148.0" onAction="#cmbDistrict" prefHeight="25.0" prefWidth="414.0" promptText="District" />
+                  <JFXComboBox fx:id="cmbDistrict" labelFloat="true" layoutX="14.0" layoutY="148.0" prefHeight="25.0" prefWidth="414.0" promptText="District" />
                   <JFXTextField fx:id="txtHead" labelFloat="true" layoutX="14.0" layoutY="194.0" onAction="#txtHeadOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Head" />
                   <JFXTextField fx:id="txtHeadContactNumber" labelFloat="true" layoutX="14.0" layoutY="238.0" onAction="#txtHeadContactNumberOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Head Contact Number" />
                   <JFXTextField fx:id="txtCenterContactNumber1" labelFloat="true" layoutX="14.0" layoutY="282.0" onAction="#txtCenterContactNumber1OnAction" prefHeight="25.0" prefWidth="414.0" promptText="Center Contact Number 1" />
                   <JFXTextField fx:id="txtCenterContactNumber2" labelFloat="true" layoutX="14.0" layoutY="329.0" onAction="#txtCenterContactNumber2OnAction" prefHeight="25.0" prefWidth="414.0" promptText="Center Contact Number 2" />
                   <JFXTextField fx:id="txtCapacity" labelFloat="true" layoutX="16.0" layoutY="375.0" onAction="#txtCapacityOnAction" prefHeight="25.0" prefWidth="414.0" promptText="Capacity" />
-                  <JFXButton fx:id="btnSave" layoutX="155.0" layoutY="8.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #339966;" text="Save" textFill="WHITE" />
-                  <JFXButton fx:id="btnDelete" layoutX="274.0" layoutY="8.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #ff5050;" text="Delete" textFill="WHITE" />
+                  <JFXButton fx:id="btnSave" layoutX="155.0" layoutY="8.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #339966;" text="Save" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton fx:id="btnDelete" layoutX="274.0" layoutY="8.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="117.0" style="-fx-background-color: #ff5050;" text="Delete" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
                   <Label fx:id="lblHeadContactNumber" layoutX="225.0" layoutY="247.0" prefHeight="17.0" prefWidth="202.0" text="Please Enter corrrect format (xxx-xxxxxxx)" textFill="RED">
                      <font>
                         <Font size="11.0" />
