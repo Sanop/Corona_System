@@ -9,10 +9,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -29,6 +32,7 @@ public class LoginController {
     public JFXButton btnLogin;
     public static String userID;
     public AnchorPane root;
+    public Label lblForgot;
 
     public void initialize(){
         txtUserName.setDisable(true);
@@ -131,5 +135,20 @@ public class LoginController {
 
     public static void setUserID(String id){
         userID = id;
+    }
+
+    public void lblForgotOnMouseClicked(MouseEvent mouseEvent) {
+        try {
+            Scene scene = new Scene(FXMLLoader.load(this.getClass().getResource("/view/ForgotPassword.fxml")));
+            Stage primaryStage = (Stage) root.getScene().getWindow();
+            primaryStage.setScene(scene);
+            Image img = new Image("/images/virus.png");
+            primaryStage.getIcons().add(img);
+            primaryStage.setTitle("Forgot Password");
+            primaryStage.centerOnScreen();
+            primaryStage.sizeToScene();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
